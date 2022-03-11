@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
+import { Login } from "./component/login";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
@@ -9,6 +10,8 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import LoginFormik from "./pages/Login";
+import RegisterUser from "./pages/RegisterUser";
 
 //create your first component
 const Layout = () => {
@@ -22,12 +25,19 @@ const Layout = () => {
         <ScrollToTop>
           <Navbar />
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/home">
               <Home />
             </Route>
             <Route exact path="/demo">
               <Demo />
             </Route>
+            <Route exact path="/login">
+              <LoginFormik />
+            </Route>
+            <Route exact path="/register">
+              <RegisterUser />
+            </Route>
+
             <Route exact path="/single/:theid">
               <Single />
             </Route>
