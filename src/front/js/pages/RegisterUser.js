@@ -2,7 +2,14 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
+import { useHistory } from "react-router-dom";
+
 const RegisterUser = () => {
+  const history = useHistory();
+  const onClickInit = (e) => {
+    e.preventDefault();
+    history.push("/login");
+  };
   return (
     <>
       <form className="form">
@@ -69,6 +76,7 @@ const RegisterUser = () => {
             placeholder="example-id=514232261a"
           />
         </div>
+        <button onClick={onClickInit}> submit</button>
       </form>
     </>
   );
